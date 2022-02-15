@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script 
+    src="https://code.jquery.com/jquery-3.6.0.min.js" 
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+    crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+</head>
+<body>
+    <h1>사용자권한확인</h1>
+    <div id="authorityStart">
+    </div>
+    <table id="authorityHtml">
+        <tr>
+            <td>계좌 잔액조회</td>
+            <td>
+                <input type="button" id="ABI" value="권한">
+            </td>
+            <td id="ABI_YN"></td>
+        </tr>
+        <tr>
+            <td>입출금 거래내역</td>
+            <td>
+                <input type="button" id="DWTH" value="권한">
+            </td>
+            <td id="DWTH_YN"></td>
+        </tr>
+        <tr>
+            <td>당타행 계좌이체</td>
+            <td>
+                <input type="button" id="ATAB" value="권한">
+            </td>
+            <td id="ATAB_YN"></td>
+        </tr>
+        <tr>
+            <td>카드 내역조회</td>
+            <td>
+                <input type="button" id="CDI" value="권한">
+            </td>
+            <td id="CDI_YN"></td>
+        </tr>
+        <tr>
+            <td>서버 인증등록</td>
+            <td>
+                <input type="button" id="SAR" value="권한">
+            </td>
+            <td id="SAR_YN"></td>
+        </tr>
+    </table>
+    <div id="buttonLayout" style="display: flex; flex-direction: row;"> 
+    </div>
+    <script type="text/javascript" src="/controllers/confirmAuthority.js"></script>
+</body>
+</html>

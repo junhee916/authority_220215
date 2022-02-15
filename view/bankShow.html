@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script 
+    src="https://code.jquery.com/jquery-3.6.0.min.js" 
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+    crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+</head>
+<body>
+    <table id="companyView">
+        <tr>
+            <td>NO</td>
+            <td id="NUM"></td>
+        </tr>
+         <tr>
+            <td>기관</td>
+            <td id="COMPANY"></td>
+        </tr>
+        <tr>
+            <td>등록기간</td>
+            <td id="updatedAt"></td>
+        </tr>
+        <tr>
+            <td>상태</td>
+            <td id="BANK"></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" id="addBankAuthority" value="등록">
+            </td>
+            <td>
+                <input type="button" id="deleteBankAuthority" value="제거">
+            </td>
+        </tr>
+    </table>
+    <table id="userView">
+        <tr>
+            <td>No</td>
+            <td>회사</td>
+            <td>ID</td>
+            <td>이름</td>
+            <td>부서</td>
+            <td>직책</td>
+            <td>신청시간</td>
+            <td>상태</td>
+        </tr>
+    </table>
+    <script type="text/javascript" src="/controllers/bankShow.js"></script>
+</body>
+</html>

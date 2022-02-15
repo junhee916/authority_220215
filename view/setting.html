@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script 
+    src="https://code.jquery.com/jquery-3.6.0.min.js" 
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+    crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+</head>
+<body>
+	<div class="col-sm-8 col-lg-10 content" style="min-height:1200px;">
+		<h6 class="mg-md tc-black" style="font-size:1.2em;">
+			<i class="fa fa-search-dollar"></i> 업무권한설정
+		</h6>
+		<!-- 사용자정보 -->
+		<div class="row">
+			<div class="col">
+				<h6 class="tc-black">
+					사용자정보
+				</h6>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="row">
+					<div class="w-style">
+						<label class="lebel-center">
+							ID
+						</label>
+					</div>
+					<div class="col table-content-col">
+						<div class="form-group">
+							<select id="userSelect" name="userSelect" class="form-control table-input-text-shot"></select>
+							<div id="selectUserMoveBtn" class="btn btn-d btn-sm table-contents-bt table-btn xs-hidden d-none d-sm-inline">이동</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row block">
+			<div class="col block">
+				<div class="row">
+					<div class="w-style">
+						<label class="lebel-center">
+							사용자명
+						</label>
+					</div>
+					<div class="col table-content-col">
+						<div class="form-group">
+							<div style="width:100%;" id="NAME" class="form-control"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col block">
+				<div class="row">
+					<div class="w-style">
+						<label class="lebel-center">
+							부서명<br>
+						</label>
+					</div>
+					<div class="col table-content-col">
+						<div class="form-group">
+							<div style="width:100%;" id="DEPARTMENT" class="form-control"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row block">
+			<div class="col block">
+				<div class="row">
+					<div class="w-style">
+						<label class="lebel-center">
+							직위<br>
+						</label>
+					</div>
+					<div class="col table-content-col">
+						<div class="form-group">
+							<div style="width:100%;" id="SPOT" class="form-control" value=""></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col block">
+				<div class="row block">
+					<div class="w-style block-style">
+						<label class="lebel-center">
+							보안매체일련번호<br>
+						</label>
+					</div>
+					<div class="col table-content-col block-style">
+						<div class="form-group">
+							<div style="width:100%;" id="security-num" class="form-control"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		 <!-- //사용자정보 -->
+		 <div class="day-limit">
+			<div class="row">
+				<h2>1일 이체한도<span id="DAYACCOUNT"></span></h2>
+				<h2>1회 이체한도<span id="FIRSTACCOUNT"></span></h2>
+			</div>
+			<div class="row">
+			   <h2>1일 잔여한도<span id="remainDAYKRW"></span></h2>
+			   <h2>1회 잔여한도<span id="remainTIMEKRW"></span></h2>
+		   </div>
+		 </div>
+		 <!-- 사용자이체한도설정 -->
+		<div class="mg-md">
+			<div class="row">
+				<div class="col">
+					<h6 class="tc-black">
+						사용자이체한도설정
+					</h6>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="table-responsive">
+						<table>
+							<tbody>
+								<tr>
+									<th>구분</th>
+									<th>원화(원)</th>
+									<th>외화(USD)</th>
+									<th class="table-week"></th>
+								</tr>
+								<tr>
+									<td>1일 사용자 한도</td>
+									<td class="table-td depth-list"><input type="number" id="DAYKRW" class="text-lg-right"></td>
+									<td class="table-td depth-list"><input type="number" id="DAYFOREIGN" class="text-lg-right"></td>
+								</tr>
+								<tr>
+									<td>1일 사용자 한도</td>
+									<td class="table-td depth-list"><input type="number" id="TIMEKRW" class="text-lg-right"></td>
+									<td class="table-td depth-list"><input type="number" id="TIMEFOREIGN" class="text-lg-right">,</td>
+								</tr>
+								<tr>
+									<td>당일사용자금액합계</td>
+									<td class="table-td depth-list"></td>
+									<td class="table-td depth-list"></td>
+									<td class="table-td depth-list"></td>
+								</tr>
+								<tr>
+									<td>당일사용자금액합계</td>
+									<td class="table-td depth-list"></td>
+									<td class="table-td depth-list"></td>
+									<td class="table-td depth-list"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col table-content-col bloc-margin-top">
+					<span id="setAmtBtn" class="btn btn-d btn-lg bt-yellow-bottom" style="text-align:right;float:right;font-weight:bold;">설정</span>
+				</div>
+			</div>
+		</div>
+		<!-- //사용자이체한도설정 -->
+		<!-- 로그인가능시간설정 -->
+		<div>
+			<div class="row">
+				<div class="col">
+					<h6 class="tc-black">
+						로그인가능시간설정
+					</h6>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="table-responsive">
+						<table>
+							<tbody>
+								<tr>
+									<th>업무가능요일</th>
+									<th class="table-week">
+										<form class="week-wrap" id="setMonCheck">
+											<input type="checkbox" name="MON" value="MON">
+											<label for="week01">월</label>
+										</form>
+									</th>
+									<th class="table-week" id="setTuesCheck">
+										<form class="week-wrap" id="setTuesCheck">
+											<input type="checkbox" name="TUES" value="TUES">
+											<label for="week01">화</label>
+										</form>
+									</th>
+									<th class="table-week" id="setWednesCheck">
+										<form class="week-wrap">
+											<input type="checkbox" name="WEDNES" value="WEDNES">
+											<label for="week01">수</label>
+										</form>
+									</th>
+									<th class="table-week" id="setThursCheck">
+										<form class="week-wrap">
+											<input type="checkbox" name="THURS" value="THURS">
+											<label for="week01">목</label>
+										</form>
+									</th>
+									<th class="table-week" id="setFriCheck">
+										<form class="week-wrap">
+											<input type="checkbox" name="FRI" value="FRI">
+											<label for="week01">금</label>
+										</form>
+									</th>
+									<th class="table-week">
+										<form class="week-wrap" id="setSaturCheck">
+											<input type="checkbox" name="SATUR" value="SATUR">
+											<label for="week01">토</label>
+										</form>
+									</th>
+									<th class="table-week">
+										<form class="week-wrap" id="setSunCheck">
+											<input type="checkbox" name="SUN" value="SUN">
+											<label for="week01">일</label>
+										</form>
+									</th>
+								</tr>
+								<tr>
+									<td>업무가능시간</td>
+									<td colspan="7" class="table-td depth-list">
+										<form>
+											<p>                
+												<select name="startTime" id="startTime"></select>
+											</p>
+											~
+											<p>
+												<select name="endTime" id="endTime"></select>
+											</p>
+										</form>
+									</td>
+								</tr>
+								<div class="row">
+									<div class="col table-content-col bloc-margin-top">
+										<span id="setLoginBtn" class="btn btn-d btn-lg bt-yellow-bottom" style="text-align:right;float:right;font-weight:bold;">설정</span>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col table-content-col bloc-margin-top">
+										<span id="userAuthorityBtn" class="btn btn-d btn-lg bt-yellow-bottom" style="text-align:right;float:right;font-weight:bold;">사용자 권한 설정</span>
+									</div>
+								</div>
+							</tbody>
+						</table>
+					</div>
+					<div class="mg-md mt10">
+						<p class="p-small">※ 사용자가 인터넷뱅킹 로그인이 가능한 요일 및 시간을 설정하실 수 있습니다.</p>
+						<p class="p-small">※ 사용자가 로그인 후 로그아웃 되기 전까지 계속 로그인유지가 가능하며 설정된 시간 에는 다시 재로그인하실 수 있습니다.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //로그인가능시간설정 -->
+	</div>
+<script type="text/javascript" src="/controllers/setting.js"></script>
+</body>
+</html>

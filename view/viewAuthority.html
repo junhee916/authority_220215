@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script 
+    src="https://code.jquery.com/jquery-3.6.0.min.js" 
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+    crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+</head>
+<body>
+	<div class="col-sm-8 col-lg-10 content" style="min-height:1200px;">
+		<h6 class="mg-md tc-black" style="font-size:1.2em;">
+			<i class="fa fa-search-dollar"></i> 업무권한설정
+		</h6>
+		<div class="row">
+			<h6 class="tc-black">
+				사용자권한정보
+			</h6>
+		</div>
+		<div class="inquiry-wrap">
+			<div class="inquiry">
+				<div>
+					조회 구분
+					<input type="checkbox" name="searchUser" id="allSelectUser" checked onclick="AllSelectUser(this)">
+					<label for="inquiry01">전체</label>
+					<input type="checkbox" name="searchUser" id="inquiry02" onclick="AllSelectUser(this)">
+					<label for="inquiry02">정상</label>
+					<input type="checkbox" name="searchUser" id="inquiry03" onclick="AllSelectUser(this)">
+					<label for="inquiry03">해지</label>
+				</div>
+				<button onclick="getAllSearchUser()">조회</button>
+				<div>
+					<p>
+						조회기간: <span id="searchTimeView"></span>
+					</p>
+				</div>
+			</div>
+			<div class="mg-md">
+				<div class="row">
+					<div class="table-responsive">
+						<table>
+							<tbody id="viewUserData">
+								<tr>
+									<th>선택</th>
+									<th>번호</th>
+									<th>상태</th>
+									<th>ID</th>
+									<th>사용자명</th>
+									<th>부서명</th>
+									<th>직위</th>
+									<th>1일이체한도</th>
+									<th>1회이체한도</th>
+									<th>메뉴권한설정</th>
+									<th>사용자</th>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col table-content-col bloc-margin-top">
+						<div class="form-group">
+							<a href="/setting">업무권한설정</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="/controllers/viewAuthority.js"></script>
+</body>
+</html>
